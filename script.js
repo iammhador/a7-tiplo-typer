@@ -113,16 +113,18 @@ const start = () => {
   const startCountdown = setInterval(() => {
     // countdownOverlay.innerHTML = "<h1>`${count}`</h1>";
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
+
     // finished timer
-    if (count === 0) {
+    if (count == 0) {
       // -------------- START TYPING -----------------
-      document.addEventListener("keydown", c);
-      countdownOverlay.style.display = "flex";
+      document.addEventListener("keydown", typeController);
+      countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
+
     count--;
   }, 1000);
 };
@@ -137,8 +139,6 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
-
-  document.getElementById("show-time").innerHTML = `${
-    startTime ? timeSpent : 0
-  } seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0}
+   seconds`;
 }, 1000);
