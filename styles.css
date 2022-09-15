@@ -184,10 +184,6 @@ button {
   top: 0;
 }
 
-body {
-  height: 100000px;
-}
-
 @media only screen and (max-width: 767px) {
   #question {
     text-align: center;
