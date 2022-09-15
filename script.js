@@ -5,6 +5,12 @@ const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
+window.addEventListener("keydown", function (e) {
+  if (e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault();
+  }
+});
+
 // variables
 let userText = "";
 let errorCount = 0;
@@ -115,7 +121,7 @@ const start = () => {
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
-    if (count === -1) {
+    if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
