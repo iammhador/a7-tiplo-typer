@@ -184,7 +184,7 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 767px) {
   #question {
     text-align: center;
     padding: 5px 10px;
@@ -199,5 +199,22 @@ button {
   h3 {
     text-align: center;
     margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 768px) {
+  .box-container {
+    padding: 0 5px;
+    width: 100%;
+  }
+  .card {
+    width: 32%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  .card h3 {
+    font-size: 13px;
+    line-height: 20px;
   }
 }
